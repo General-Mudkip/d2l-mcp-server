@@ -22,20 +22,11 @@ course material.
 
 ## Installation
 
-### Option 1: Install from GitHub (recommended)
-
 ```bash
-npm install -g github:general-mudkip/d2l-mcp-server
+npm install -g d2l-mcp-server
 ```
 
-### Option 2: Clone and build locally
-
-```bash
-git clone https://github.com/general-mudkip/d2l-mcp-server.git
-cd d2l-mcp-server
-npm install
-npm run build
-```
+This will automatically install Chromium for browser automation.
 
 ## Setup
 
@@ -43,8 +34,6 @@ npm run build
 
 ```bash
 d2l-mcp-auth
-# Or if installed locally:
-npm run auth
 ```
 
 This opens a browser window where you log in to Brightspace. Your session is saved to `~/.d2l-session/`.
@@ -58,23 +47,6 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
   "mcpServers": {
     "d2l": {
       "command": "d2l-mcp",
-      "env": {
-        "D2L_HOST": "learn.ul.ie",
-        "D2L_COURSE_ID": "68929"
-      }
-    }
-  }
-}
-```
-
-If installed locally, use:
-
-```json
-{
-  "mcpServers": {
-    "d2l": {
-      "command": "node",
-      "args": ["/path/to/d2l-mcp-server/dist/index.js"],
       "env": {
         "D2L_HOST": "learn.ul.ie",
         "D2L_COURSE_ID": "68929"
@@ -137,7 +109,7 @@ Setting `D2L_COURSE_ID` allows you to omit the course ID from tool calls.
 
 - **Token expiry**: Auth tokens expire after ~1 hour but auto-refresh using the saved browser session
 - **Session expiry**: Browser sessions expire after ~24h of inactivity
-- **Re-authenticate**: Run `d2l-mcp-auth` (or `npm run auth`) if your session expires
+- **Re-authenticate**: Run `d2l-mcp-auth` if your session expires
 
 ## Development
 

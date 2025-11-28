@@ -1,6 +1,6 @@
 {
   "name": "d2l-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for D2L Brightspace API with automated authentication",
   "type": "module",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
     "url": "https://github.com/general-mudkip/d2l-mcp-server"
   },
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js",
     "auth": "node dist/auth-cli.js",
